@@ -1,22 +1,23 @@
 {
+  "manifest_version": 3,
   "name": "Filly",
   "description": "Simplifies form filling with AI",
   "version": "1.0",
-  "manifest_version": 3,
-  "permissions": ["sidePanel"],
+  "permissions": ["sidePanel", "tabs", "activeTab"],
   "side_panel": {
     "default_path": "sidepanel/sidepanel.html"
-  },
-  "action": {
-    "default_title": "Click to open panel"
   },
   "background": {
     "service_worker": "service-worker.js"
   },
+  "action": {
+    "default_title": "Click to open Filly"
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": ["scripts/content.js"],
+      "css": ["scripts/content.css"]
     }
   ]
 }

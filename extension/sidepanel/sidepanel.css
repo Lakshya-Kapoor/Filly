@@ -10,6 +10,7 @@ body {
   flex-direction: column;
   align-items: stretch;
   gap: 2rem;
+  background-color: rgb(230, 230, 230);
 }
 
 h1 {
@@ -17,20 +18,13 @@ h1 {
   align-self: center;
 }
 
-.select-element {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: 1rem;
-}
-
 .loader {
   width: 25px;
   height: 25px;
-  border: 2px solid #ccc;
-  border-top: 2px solid #3498db;
+  border: 2px solid rgb(25, 25, 25);
+  border-top: 5px solid transparent;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin 1.2s linear infinite;
 }
 
 @keyframes spin {
@@ -42,30 +36,95 @@ h1 {
   }
 }
 
-.button {
-  padding: 10px;
-  background-color: rgb(35, 35, 35);
+button {
   border: none;
-  border-radius: 2rem;
+  background: none;
   color: white;
   font-size: medium;
+  padding: 10px;
+  border-radius: 2rem;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.9;
   transition: opacity 0.2s ease;
 }
 
-.button:hover {
-  cursor: pointer;
-  opacity: 0.9;
+button:active {
+  opacity: 1;
 }
 
-.button:active {
-  background-color: rgb(30, 30, 30);
-  opacity: 0.95;
+#answer-button {
+  background-color: rgb(25, 25, 25);
 }
 
-.hidden {
+#clear-button {
+  display: none;
+  background-color: rgb(220, 50, 50);
+}
+
+#select-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2rem;
   display: none;
 }
 
-#clear {
-  background-color: rgb(225, 44, 44);
+.loading-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.loading-container span {
+  font-size: large;
+  font-weight: 400;
+}
+
+#question-container,
+#context-container,
+#answer-container {
+  align-self: stretch;
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+#context-container,
+#answer-container {
+  display: none;
+}
+
+textarea {
+  height: 150px;
+  resize: none;
+  padding: 10px;
+  border-radius: 1rem;
+  border: none;
+  font-size: large;
+  outline: none;
+}
+
+#context-container textarea,
+#answer-container textarea {
+  height: 200px;
+}
+
+#generate-button,
+#regenerate-button {
+  background-color: rgb(0, 96, 250);
+  display: none;
+}
+
+#fill-button {
+  background-color: rgb(0, 154, 59);
+  display: none;
+}
+
+#generating-container {
+  display: none;
+  align-self: center;
 }

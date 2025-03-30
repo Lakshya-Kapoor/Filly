@@ -6,12 +6,24 @@
   </head>
   <body>
     <h1>Filly</h1>
-    <button id="fill" class="button">Fill</button>
-    <button id="clear" class="button hidden">Clear</button>
-
-    <div id="select">
-      <!-- Content will be added dynamically from JS -->
+    <button id="answer-button">Answer question</button>
+    <button id="clear-button">Clear</button>
+    <div id="select-container"></div>
+    <div id="context-container">
+      <p>Add context for AI:</p>
+      <textarea placeholder="Example: my name is John Doe"></textarea>
     </div>
+    <button id="generate-button">Generate answer</button>
+    <div class="loading-container" id="generating-container">
+      <span>Generating answer</span>
+      <div class="loader"></div>
+    </div>
+    <div id="answer-container">
+      <p>Answer:</p>
+      <textarea></textarea>
+    </div>
+    <button id="regenerate-button">Regenerate answer</button>
+    <button id="fill-button">Fill answer</button>
   </body>
   <script src="sidepanel.js"></script>
 </html>

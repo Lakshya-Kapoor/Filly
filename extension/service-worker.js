@@ -16,11 +16,12 @@ function sendMessageToSidePanel(message) {
 }
 
 // Listens for messages from the sidepanel and content script
-chrome.runtime.onMessage.addListener((message) => {
+chrome.runtime.onMessage.addListener(async (message) => {
   if (
     message.type == "getQuestion" ||
     message.type == "getAnswerField" ||
-    message.type == "setAnswerField"
+    message.type == "setAnswerField" ||
+    message.type == "clearSelection"
   ) {
     sendMessageToContentScript(message);
   }
@@ -29,8 +30,12 @@ chrome.runtime.onMessage.addListener((message) => {
     sendMessageToSidePanel(message);
   }
 
-  // TODO: Call gemini API
-  if (message.type == "getAIAnswer") {
-    sendMessageToSidePanel({ type: "gotAIAnswer", answer: "Answer" });
+  if (message.type == "generateAnswer") {
+    console.log(message);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    sendMessageToSidePanel({
+      type: "gotAnswer",
+      answer: "This is a demo answer",
+    });
   }
 });

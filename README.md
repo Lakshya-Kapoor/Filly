@@ -2,6 +2,8 @@
 
 Filly is a Chrome extension that uses AI to fill out online forms for you. No more boring form-filling, Filly makes it quick and easy!
 
+> **NOTE**: I'm still working on some features of Filly. 
+
 ## Installation
 
 1. Clone this repository:
